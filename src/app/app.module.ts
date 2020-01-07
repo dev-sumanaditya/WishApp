@@ -9,19 +9,30 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { IonicStorageModule } from '@ionic/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { LoadingService } from './services/loading.service';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicStorageModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    InAppBrowser,
+    LoadingService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule {}

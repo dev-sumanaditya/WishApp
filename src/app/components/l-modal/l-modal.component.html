@@ -1,0 +1,72 @@
+<ion-content>
+  <div class="container">
+    <div class="header">
+      <span>Add to Wishlist</span>
+      <div class="close" (click)="dismiss()">
+          <ion-icon ios="ios-close-circle-outline" md="ios-close-circle-outline"></ion-icon>
+      </div>
+    </div>
+  
+    <div id="slider" #slider>
+        <div class="slide" *ngIf="currentPos == 0">
+            <form (ngSubmit)="logForm()" [formGroup]="item">
+                <div class="form">
+                  <ion-input name="name" formControlName="name" placeholder="Item Name*" clear-input="true"  spellcheck="false" inputmode="text" maxlength="80" minlength="2" mode="md"></ion-input>
+                  <ion-input name="price" formControlName="price" placeholder="Price" clear-input="true"  spellcheck="false" inputmode="tel" maxlength="20" minlength="1" mode="md"></ion-input>
+                  <ion-input name="url" formControlName="url" placeholder="Url" clear-input="true" type="url" spellcheck="false" inputmode="url" maxlength="380" minlength="3" mode="md"></ion-input>
+                </div>
+                <ion-button type="submit" [disabled]="!item.valid" fill="outline" expand="full" color="light">next</ion-button>
+            </form>
+        </div>
+        <div class="slide slide2" *ngIf="currentPos == 1">
+          <h3 style="margin-bottom: 0px;">Great!</h3>
+          <h3>Do you want to set last date for this Item? </h3>
+          <p>Adding last date will notify you about the deadline before time so you don't miss any exciting offer.</p>
+          <div class="btnc">
+            <ion-button (click)="Next()" shape="round" fill="outline" color="light">Yes</ion-button>
+            <ion-button (click)="Next2()" shape="round" fill="outline" color="light">No</ion-button>
+          </div>
+        </div>
+        <div class="slide" *ngIf="currentPos == 2">
+            <ion-datetime
+              name="date"
+              (ionChange)="selectedDate()"
+              displayFormat="DD MMM YYYY" 
+              min="2019-12-26" max="2040"
+              [pickerOptions]="customPickerOptions"
+              mode="md" 
+              value="2019-12-15T13:47:20.789">
+            </ion-datetime>
+            <ion-button type="submit" (click)="Next()" [disabled]="!datePicked" fill="outline" expand="full" color="light">next</ion-button>
+        </div>
+        <div class="slide slide2" *ngIf="currentPos == 3">
+          <h3 style="margin-bottom: 0px;">Great!</h3>
+          <h3>Do you want to add a Note? </h3>
+          <p>Adding a note will help you remember key details of the product.</p>
+          <div class="btnc">
+            <ion-button (click)="Next()" shape="round" fill="outline" color="light">Yes</ion-button>
+            <ion-button (click)="Next2()" shape="round" fill="outline" color="light">No</ion-button>
+          </div>
+        </div>
+        <div class="slide" *ngIf="currentPos == 4">
+          <ion-textarea rows="6" cols="20" autocapitalize="sentences" maxlength="1200" placeholder="Note..."></ion-textarea>
+          <ion-button type="button" (click)="Next()" fill="outline" expand="full" color="light">next</ion-button>
+        </div>
+        <div class="slide slide2" *ngIf="currentPos == 5">
+          <h3 style="margin-bottom: 0px;">Great!</h3>
+          <h3>Now let's set the priority of this item.</h3>
+          <ion-select placeholder="Choose Priority" [interfaceOptions]="customAlertOptions" interface="action-sheet" mode="ios">
+            <ion-select-option value="high">High</ion-select-option>
+            <ion-select-option value="medium">Medium</ion-select-option>
+            <ion-select-option value="low">Low</ion-select-option>
+          </ion-select>
+          <ion-button type="button" (click)="Next()" fill="outline" expand="full" color="light">next</ion-button>
+        </div>
+        <div class="slide slide2" *ngIf="currentPos > 5">
+          <h3 style="margin-bottom: 0px;">All Done!</h3>
+          <h4>Add this item to Wishlist.</h4>
+          <ion-button type="button" (click)="dismiss()" fill="outline" expand="full" color="light">Add to Wishlist</ion-button>
+        </div>
+      </div>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-content color="dark">
+  <div class="header">
+    <ion-button (click)="close()" fill="clear" color="light"><ion-icon ios="md-arrow-round-back" md="md-arrow-round-back" (click)="close()"></ion-icon></ion-button>
+    <ion-button fill="clear" color="light" ><img src="../../../assets/icon/edit1.png" alt="Edit"></ion-button>
+  </div>
+  <div class="content">
+    <h1>{{data.name}}</h1>
+    <h4>Rs {{data.price}}</h4>
+    <div class="website" (click)="openUrl()">
+      <ion-icon ios="md-globe" md="md-globe"></ion-icon>
+      <span>{{data.url}}</span>
+    </div>
+    <div class="time">
+      7 days left
+    </div>
+    <div class="badge">
+      <ion-badge color="light">Priority: {{data.status}}</ion-badge>
+    </div>
+    <div class="note">
+      Note : {{data.note}}
+    </div>
+
+  </div>
+</ion-content>

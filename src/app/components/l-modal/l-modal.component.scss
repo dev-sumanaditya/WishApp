@@ -1,0 +1,91 @@
+ion-content {
+    --background: rgb(26, 26, 26);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+
+    .close {
+        ion-icon {
+            font-size: 30px;
+            color: white;
+            background-color: rgb(26, 26, 26);
+        }
+    }
+}
+
+.form {
+    padding-top: 60px;
+    margin-bottom: 50px;
+    color: white;
+
+
+    ion-input {
+        --background: rgb(26,26,26);
+        --color: white;
+        --placeholder-color: #ddd;
+        --padding-start: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-align: start;
+    }
+}
+
+#slider {
+    display: flex;
+    flex-direction: column;
+
+    .slide2 {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            margin-bottom: 40px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .btnc {
+            display: flex;
+
+            ion-button {
+                margin-top: 30px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    ion-datetime {
+        border: 1px solid rgba(221, 221, 221, 0.253);
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    ion-textarea {
+        border: 1px solid rgba(221, 221, 221, 0.253);
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    ion-select {
+        --padding-start: 0;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+}

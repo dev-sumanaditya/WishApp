@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="top ion-activatable" (click)="expandToggle()">
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    <ion-icon class="bullet" ios="ios-checkbox-outline" md="ios-checkbox-outline"></ion-icon> 
+    <div class="name">{{data.listName}} -</div>
+    <ion-icon class="exp" [class.rotate]="expanded" ios="ios-arrow-down" md="ios-arrow-down"></ion-icon>
+  </div>
+
+    <ion-list inset="false" mode="md" class="hider" [class.expand]="expanded">
+        <ion-reorder-group (ionItemReorder)="onRenderItems($event)" disabled="{{isDisabled}}">
+          <ion-item color="dark" (click)="clickedList(item)" *ngFor="let item of listItems" class="litem ion-activatable">
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+            <div class="container">
+                    <div class="one">
+                        <ion-icon *ngIf="!item.priority" class="status-icon" ios="md-bookmark" md="md-bookmark" color="{{item.color}}"></ion-icon>
+                        <ion-icon *ngIf="item.priority"  class="status-icon" ios="md-timer" md="ios-timer" color="{{item.color}}"></ion-icon>
+                        <div class="name">
+                          {{item.name}}
+                        </div>
+                        <div class="price">
+                          <img src="../../assets/icon/rupee1.png" alt="">
+                          <div class="p">
+                              {{item.price}}
+                          </div>
+                        </div>
+                    </div>
+            </div>
+            <ion-reorder *ngIf="!isDisabled"></ion-reorder>
+          </ion-item>
+        </ion-reorder-group>
+      </ion-list> 
+</div>

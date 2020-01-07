@@ -1,0 +1,75 @@
+<ion-content class="container" color="dark">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="name">Create New Wishlist</div>
+    <div class="close ion-activable" (click)="dismiss()">
+      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+      <ion-icon ios="ios-close-circle-outline" md="ios-close-circle-outline"></ion-icon>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="slide">
+      <h3>Select type -</h3>
+      <div class="types">
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/destination.png" alt="Travel">
+          <div class="des">Travel</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/hoodie.png" alt="Clothing">
+          <div class="des">Clothing</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/sunglasses.png" alt="Accessories">
+          <div class="des">Accessories</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/charger.png" alt="Gadgets">
+          <div class="des">Gadgets</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/shoe.png" alt="Shoes">
+          <div class="des">Footwear</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/champagne.png" alt="Occasion">
+          <div class="des">Occasion</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/house.png" alt="Home">
+          <div class="des">Home</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/books.png" alt="Books">
+          <div class="des">Books</div>
+        </div>
+        <div class="type ion-activatable">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="../../../assets/listIcons/tap.png" alt="Books">
+          <div class="des">Others</div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="slide">
+      <form (ngSubmit)="logForm()" [formGroup]="item">
+        <div class="form">
+          <ion-input name="name" formControlName="name" placeholder="Item Name*" clear-input="true"  spellcheck="false" inputmode="text" maxlength="80" minlength="2" mode="md"></ion-input>
+          <ion-input name="price" formControlName="price" placeholder="Price" clear-input="true"  spellcheck="false" inputmode="tel" maxlength="20" minlength="1" mode="md"></ion-input>
+          <ion-input name="url" formControlName="url" placeholder="Url" clear-input="true" type="url" spellcheck="false" inputmode="url" maxlength="380" minlength="3" mode="md"></ion-input>
+        </div>
+        <ion-button type="submit" [disabled]="!item.valid" fill="outline" expand="full" color="light">next</ion-button>
+      </form>
+    </div> -->
+  </div>
+</ion-content>

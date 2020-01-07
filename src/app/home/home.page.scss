@@ -1,4 +1,21 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-toolbar {
+  color: #fff;
+  --background: #eb5757; /* fallback for old browsers */
+  --background: -webkit-linear-gradient(to right, #eb5757, #000000); /* Chrome 10-25, Safari 5.1-6 */
+  --background: linear-gradient(to right, #eb5757, #000000);
+  
+  ion-button {
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}
+ion-title {
+  font-family: 'cookie', cursive;
+  font-size: 30px;
+}
+
+.main {
+  margin-bottom: 70px;
+  padding: 50px 0px;
 }
